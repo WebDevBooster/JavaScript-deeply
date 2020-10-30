@@ -24,7 +24,7 @@ And it is precisely that fact that everyone keeps telling you that `NaN` means "
 
 Here's the only right and proper way to think about `NaN`: 
 
-### NaN in JavaScript stands for "nonsense as a number"!
+## NaN in JavaScript stands for "nonsense as a number"!
 
 There you go! If you adjust your mental model to think about `NaN` as **nonsense expressed as a number**, then it becomes immediately obvious and logical why the output of 
 ```javascript
@@ -46,7 +46,7 @@ parseInt("");
 ```
 then you'll also get `NaN` (nonsense expressed as a number) but it will be ***different*** kind of nonsense. 
 
-### Nonsense is unique, unpredictable and random. 
+## Nonsense is unique, unpredictable and random. 
 
 That's why one piece of random nonsense cannot be equal to another piece of random nonsense. And that's the reason you get `false` for 
 ```javascript
