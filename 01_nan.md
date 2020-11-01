@@ -60,3 +60,8 @@ Once you make this little shift in your mental model, everything about `NaN` bec
 
 There's nothing "weird" or "quirky" about JavaScript once you grow a proper understanding of all the parts that comprise it. 
 
+You could argue that thinking of `NaN` as "nonsense as a number" is just a mnemonic device and it is. After all, since ES2015 we have the `Object.is()` method which checks whether or not two values are the same value. And `Object.is(NaN, NaN)` does return `true` i.e. according to `Object.is()` the value of a `NaN` really does equal the value of any other `NaN` (consistent with what we normally expect with any normal numbers that look identical). 
+
+We can probably all agree that the unexpected output when comparing `NaN` to `NaN` and when comparing `-0` to `0` with a strict equality operator (`===`) are just bugs in JavaScript that have to be kept for historical and backward compatibility reasons. And the newer `Object.is()` method is designed to fix that. 
+
+Still, thinking of `NaN` as "nonsense as a number" allows to instantly eliminate confusion (and reduce bugs) when dealing with legacy code. Even in modern code, `Object.is()` has not yet universally replaced the use of the strict equality operator and who knows whether it will ever fully replace it. `===` is a whole lot easier to type than `Object.is()` and if you just shift your mental model a little (i.e. start thinking of `NaN` as "nonsense as a number"), you might not ever need to use `Object.is()` in your code. 
