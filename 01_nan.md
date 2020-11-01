@@ -66,4 +66,4 @@ We can probably all agree that the unexpected output when comparing `NaN` to `Na
 
 Still, thinking of `NaN` as "nonsense as a number" allows to instantly eliminate confusion (and reduce bugs) when dealing with legacy code. Even in modern code, `Object.is()` has not yet universally replaced the use of the strict equality operator and who knows whether it will ever fully replace it. `===` is a whole lot easier to type than `Object.is()` and if you just shift your mental model a little (i.e. start thinking of `NaN` as "nonsense as a number"), you might not ever need to use `Object.is()` in your code. 
 
-Plus, my mental model helps to remind you that `NaN` is of type number and it makes this fact to seem logical. 
+Plus, my mental model helps to remind you that `NaN` is of type number and it makes this fact appear logical. 
