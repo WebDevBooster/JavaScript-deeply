@@ -65,3 +65,14 @@ You could argue that thinking of `NaN` as "nonsense as a number" is just a mnemo
 We can probably all agree that the unexpected output when comparing `NaN` to `NaN` and when comparing `-0` to `0` with a strict equality operator (`===`) are just bugs in JavaScript that have to be kept for historical and backward compatibility reasons. And the newer `Object.is()` method is designed to fix that. 
 
 It can be argued that `Object.is()` is more suitable for comparing two values that can be different. When it comes to `NaN`, we don't really want to compare two values i.e. we don't want to compare the result of our operation to `NaN`. We just want to know whether or not the result of our operation is `NaN`. And to answer that question, we should use the specialist method `isNaN()` or `Number.isNaN()` because that's specifically designed to answer that question. So, it makes more sense to use that. 
+
+## Caution when dealing with `NaN` in arrays!
+
+Because the `indexOf()` method in arrays uses the strict equality operator (`===`) when searching through the array, `_array.indexOf(NaN)` will always return `-1`, even if you do have `NaN` in the array i.e. JavaScript will say that `NaN` isn't there. 
+
+To get around this, use `_array.includes(NaN)` because it returns `true` in case `NaN` is present in the array. 
+
+To find the index/position of `NaN` in a JavaScript array, you can call the `findIndex()` method on that array with `Number.isNaN` as the callback like so:
+```javascript
+[2, 11, 42, NaN].findIndex(Number.isNaN)
+```
